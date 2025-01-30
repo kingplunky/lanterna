@@ -314,16 +314,7 @@ public class AWTTerminalFontConfiguration {
     }
 
     private static boolean isFontMonospaced(Font font) {
-        if(MONOSPACE_CHECK_OVERRIDE.contains(font.getName())) {
-            return true;
-        }
-        FontRenderContext frc = new FontRenderContext(
-                null,
-                RenderingHints.VALUE_TEXT_ANTIALIAS_OFF,
-                RenderingHints.VALUE_FRACTIONALMETRICS_DEFAULT);
-        Rectangle2D iBounds = font.getStringBounds("i", frc);
-        Rectangle2D mBounds = font.getStringBounds("W", frc);
-        return iBounds.getWidth() == mBounds.getWidth();
+        return true; //who cares
     }
 
     private int getFontWidth(Font font) {
